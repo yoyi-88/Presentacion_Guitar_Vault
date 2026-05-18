@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuitarVault - Tu Colección en el Bolsillo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================
+           VARIABLES DE DISEÑO (Basadas en tu App)
+           ========================================== */
+        :root {
+            --primary: #d4af37; /* Dorado premium */
+            --primary-glow: rgba(212, 175, 55, 0.4);
+            --dark: #1a1a1a;
+            --text-muted: #666666;
+            --bg-light: #fdfdfd;
+            --bg-white: #ffffff;
+            --danger: #eb445a; /* Rojo Ionic para acentos */
+        }
+
+        /* ==========================================
+           RESET Y TIPOGRAFÍA
+           ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ==========================================
+           COMPONENTES
+           ========================================== */
+        .btn-principal {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--bg-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0 35px;
+            height: 60px; /* La misma altura ergonómica de tu app */
+            line-height: 60px;
+            border-radius: 15px; /* Bordes redondeados consistentes */
+            box-shadow: 0 4px 15px var(--primary-glow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-principal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        /* ==========================================
+           SECCIONES
+           ========================================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--bg-white);
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .hero-banner {
+            margin-top: 50px;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: 25px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            transition: border-color 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            padding: 80px 0;
+            background-color: var(--bg-white);
+            text-align: center;
+        }
+
+        .screenshots h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .screens-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .screen-img-Horizontal {
+            width: 400px;
+            height: auto;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        .screen-img {
+            width: 250px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .screen-img:hover, .screen-img-Horizontal:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--bg-white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <h1>GuitarVault</h1>
+            <p>Organiza tu colección, desde tu primera clásica hasta la eléctrica para tocarte los temas de Fito y Fitipaldis. Gestiona, geolocaliza y comparte tu pasión en una sola app.</p>
+            
+            <a href="#descargar" class="btn-principal" onclick="alert('Buenas Javier, la app no está publicada pero este botón te rederigiría a la play store')">Descargar en Google Play</a>
+            
+            <br>
+            <img src="assets/feature-graphic.jpg" alt="Banner promocional de GuitarVault" class="hero-banner" onerror="this.src='https://via.placeholder.com/1024x500/1a1a1a/d4af37?text=Sube+tu+Feature+Graphic+Aqui'">
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">Diseñada para Empresas y Coleccionistas</h2>
+            <div class="features-grid">
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>Digitalización Nativa</h3>
+                    <p>Captura imágenes de alta calidad de tus instrumentos utilizando la cámara integrada. Guarda cortes, años de fabricación y estado en segundos.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Geolocalización Inversa</h3>
+                    <p>Introduce la ciudad de fabricación (ej. Nashville, Corona) y la app obtendrá las coordenadas GPS exactas automáticamente para verlas en el mapa.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📲</div>
+                    <h3>Comparte tu Pasión</h3>
+                    <p>Siente cada acción con feedback háptico (vibración) y comparte la ficha técnica de tus piezas de coleccionista con un solo toque.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="screenshots">
+        <div class="container">
+            <h2>Interfaz Limpia</h2>
+            <img src="images/buscar.jpg" alt="Pantalla de buscar Guitarras" class="screen-img-Horizontal">
+
+            <div class="screens-container">
+                <img src="images/añadir.jpg" alt="Pantalla de Añadir Guitarra" class="screen-img">
+                <img src="images/detalle.jpg" alt="Detalle de Guitarra" class="screen-img">
+                <img src="images/mapa.jpg" alt="Mapa de Guitarras" class="screen-img">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3 style="color: var(--primary); margin-bottom: 10px;">GuitarVault</h3>
+            <p>Desarrollado por Yoel Gómez Benítez</p>
+            <p>Proyecto Final DAH | Mayo 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
